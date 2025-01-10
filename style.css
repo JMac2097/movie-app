@@ -42,9 +42,9 @@ header {
 }
 
 main {
-	padding: 2rem;
+  padding: 2rem;
   display: grid;
-	grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
   grid-auto-rows: minmax(100px, auto);
 }
@@ -54,59 +54,67 @@ main {
   padding: 1rem;
   background-color: var(--secondary-color);
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-	position: relative;
-	overflow: hidden;
-	border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
 }
 
 .movie img {
   width: 100%;
+	transition: opacity 0.2s ease-in;
 }
 
 .movie-info {
-	color: #eee;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0.5rem 1rem 1rem;
-	letter-spacing: 0.5px;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem 1rem;
+  letter-spacing: 0.5px;
 }
 
 .movie-info h3 {
-	margin-top: 0;
+  margin-top: 0;
 }
 
-.movie-info  span {
-	background-color: var(--primary-color);
-	padding: 0.25rem 0.5rem;
-	border-radius: 3px;
-	font-weight: bold;
+.movie-info span {
+  background-color: var(--primary-color);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  font-weight: bold;
 }
 
 .movie-info span.green {
-	color: lightgreen;
+  color: lightgreen;
 }
 
 .movie-info span.red {
-	color: red;
+  color: red;
 }
 
 .movie-info span.orange {
-	color: orange;
+  color: orange;
 }
 
 .overview {
-	background-color: white;
-	padding: 2rem;
-	position: absolute;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	max-height: 100%;
-	transform: translateY(101%);
-	transition: transform 0.3s ease-in;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 2rem;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+	transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
 }
 
-.movie:hover .overview{
-	transform: translateY(0);
+.movie:hover img {
+	opacity: 0.3;
+}
+
+.movie:hover .overview {
+  visibility: visible;
+  opacity: 1;
 }
