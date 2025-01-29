@@ -48,7 +48,6 @@ header {
 main {
   padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   gap: 2rem;
   grid-auto-rows: minmax(100px, auto);
 }
@@ -60,6 +59,7 @@ main {
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   position: relative;
   overflow: hidden;
+  border: 2px solid transparent;
   border-radius: 3px;
 }
 
@@ -112,13 +112,36 @@ main {
   visibility: hidden;
   opacity: 0;
 	transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+  overflow-y: auto;
 }
 
-.movie:hover img {
-	opacity: 0.3;
+.movie:hover {
+  border: 2px solid orange;
+  cursor: pointer;
+  img {
+    opacity: 0.3;
+  }
 }
 
 .movie:hover .overview {
   visibility: visible;
   opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
