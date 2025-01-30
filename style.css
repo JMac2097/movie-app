@@ -81,22 +81,22 @@ main {
   margin-top: 0;
 }
 
-.movie-info span {
+.rating {
   background-color: var(--primary-color);
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
   font-weight: bold;
 }
 
-.movie-info span.green {
+.rating.green {
   color: lightgreen;
 }
 
-.movie-info span.red {
+.rating.red {
   color: red;
 }
 
-.movie-info span.orange {
+.rating.orange {
   color: orange;
 }
 

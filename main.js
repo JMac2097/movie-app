@@ -1,13 +1,13 @@
 const API_URL =
-  'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=120737b6c47965cfd26124583f33c7d3&page=1';
-const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
+  "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=120737b6c47965cfd26124583f33c7d3&page=1";
+const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCH_API =
   'https://api.themoviedb.org/3/search/movie?api_key=120737b6c47965cfd26124583f33c7d3&query="';
 
-const main = document.getElementById('main');
-const form = document.getElementById('form');
-const search = document.getElementById('search');
-const resetButton = document.querySelector('.js-reset-search-button');
+const main = document.getElementById("main");
+const form = document.getElementById("form");
+const search = document.getElementById("search");
+const resetButton = document.querySelector(".js-reset-search-button");
 
 getMovies(API_URL);
 
@@ -19,13 +19,13 @@ async function getMovies(url) {
 }
 
 function showMovies(movies) {
-  main.innerHTML = '';
+  main.innerHTML = "";
 
   movies.forEach((movie) => {
     const { title, poster_path, vote_average, overview } = movie;
 
-    const movieEl = document.createElement('div');
-    movieEl.classList.add('movie');
+    const movieEl = document.createElement("div");
+    movieEl.classList.add("movie");
 
     movieEl.innerHTML = `
 		<img
@@ -33,8 +33,8 @@ function showMovies(movies) {
 				alt="${title} Poster Art">
 			<div class="movie-info">
 				<h3>${title}</h3>
-				<span class=${getClassByRating(vote_average)}>${vote_average}</span>
-			</div>
+        </div>
+				<div class="rating ${getClassByRating(vote_average)}">${vote_average}</span>
 			<div class="overview">
 				<h3>Overview</h3>
 				<p>${overview}</p>
@@ -47,22 +47,22 @@ function showMovies(movies) {
 
 function getClassByRating(vote) {
   if (vote >= 8) {
-    return 'green';
+    return "green";
   } else if (vote >= 5) {
-    return 'orange';
+    return "orange";
   } else {
-    return 'red';
+    return "red";
   }
 }
 
-form.addEventListener('submit', (e) => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchTerm = search.value;
 
-  if (searchTerm && searchTerm !== '') {
+  if (searchTerm && searchTerm !== "") {
     getMovies(`${SEARCH_API}${searchTerm}"`);
 
-    search.value = '';
+    search.value = "";
     toggleResetButton(false);
   } else {
     window.location.reload();
@@ -70,11 +70,11 @@ form.addEventListener('submit', (e) => {
 });
 
 function toggleResetButton(shouldHide) {
-  resetButton.classList.toggle('hidden', shouldHide);
+  resetButton.classList.toggle("hidden", shouldHide);
   if (!shouldHide) {
-    resetButton.addEventListener('click', resetFilms);
+    resetButton.addEventListener("click", resetFilms);
   } else {
-    resetButton.removeEventListener('click', resetFilms);
+    resetButton.removeEventListener("click", resetFilms);
   }
 }
 
