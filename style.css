@@ -81,11 +81,18 @@ main {
   margin-top: 0;
 }
 
+.rating-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
 .rating {
+	display: inline-block;
+	font-size: 1.4rem;
+  font-weight: bold;
   background-color: var(--primary-color);
   padding: 0.25rem 0.5rem;
   border-radius: 3px;
-  font-weight: bold;
 }
 
 .rating.green {
@@ -118,7 +125,7 @@ main {
 .movie:hover {
   border: 2px solid orange;
   cursor: pointer;
-  img {
+  img, .movie-info {
     opacity: 0.3;
   }
 }

@@ -34,7 +34,9 @@ function showMovies(movies) {
 			<div class="movie-info">
 				<h3>${title}</h3>
         </div>
-				<div class="rating ${getClassByRating(vote_average)}">${vote_average}</span>
+				<div class="rating-container">
+					<div class="rating ${getClassByRating(vote_average)}">${vote_average}</span>
+				</div>
 			<div class="overview">
 				<h3>Overview</h3>
 				<p>${overview}</p>
