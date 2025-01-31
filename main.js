@@ -22,10 +22,14 @@ function showMovies(movies) {
   main.innerHTML = "";
 
   movies.forEach((movie) => {
-    const { title, poster_path, vote_average, overview } = movie;
+    let { title, poster_path, vote_average, overview } = movie;
 
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
+
+		// set cases to swap out unavailable data
+		if (overview === '') overview += 'No overview available'
+
 
     movieEl.innerHTML = `
 		<img
