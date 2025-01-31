@@ -24,7 +24,18 @@ header {
   display: flex;
   justify-content: flex-end;
   background-color: var(--secondary-color);
+	position: fixed;
+	width: 100vw;
+	z-index: 2;
+	opacity: 0.7;
+	transition: opacity 0.3s ease-in;
 }
+
+header:hover {
+	opacity: 1;
+}
+
+
 
 .search {
   background-color: transparent;
