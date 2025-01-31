@@ -65,25 +65,34 @@ main {
 
 .movie img {
   width: 100%;
+	height: auto;
 	transition: opacity 0.2s ease-in;
+	aspect-ratio: 2/3;
+	object-fit: contain;
+	background-color: var(--primary-color);
 }
 
 .movie-info {
   color: #eee;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem 1rem;
+  justify-content: center;
+  padding: 0.5rem 0 1rem;
   letter-spacing: 0.5px;
 }
 
 .movie-info h3 {
+	font-size: 2rem;
+	text-align: center;
   margin-top: 0;
 }
 
 .rating-container {
 	display: flex;
 	justify-content: flex-end;
+	position: absolute;
+	right: 1rem;
+	bottom: 1.3rem;
 }
 
 .rating {
@@ -125,7 +134,7 @@ main {
 .movie:hover {
   border: 2px solid orange;
   cursor: pointer;
-  img, .movie-info {
+  img {
     opacity: 0.3;
   }
 }

@@ -30,14 +30,18 @@ function showMovies(movies) {
     movieEl.innerHTML = `
 		<img
 				src="${IMG_PATH + poster_path}"
-				alt="${title} Poster Art">
-			<div class="movie-info">
-				<h3>${title}</h3>
-        </div>
+				alt="${title} Poster Art"
+				onerror="this.src='https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?q=80&w=1728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'" 
+				width="1280"
+				height="1920">
+
 				<div class="rating-container">
-					<div class="rating ${getClassByRating(vote_average)}">${vote_average}</span>
+					<div class="rating ${getClassByRating(vote_average)}">${vote_average}</div>
 				</div>
 			<div class="overview">
+						<div class="movie-info">
+				<h3>${title}</h3>
+        </div>
 				<h3>Overview</h3>
 				<p>${overview}</p>
 			</div>
