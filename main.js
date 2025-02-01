@@ -28,7 +28,9 @@ function showMovies(movies) {
     movieEl.classList.add("movie");
 
 		// set cases to swap out unavailable data
-		if (overview === '') overview += 'No overview available'
+		if (overview === '') overview += 'No overview available';
+    vote_average = vote_average.toFixed(1);
+     
 
 
     movieEl.innerHTML = `
@@ -40,7 +42,7 @@ function showMovies(movies) {
 				height="1920">
 
 				<div class="rating-container">
-					<div class="rating ${getClassByRating(vote_average)}">${vote_average}</div>
+					<div class="rating ${getClassByRating(vote_average)}">${vote_average}%</div>
 				</div>
 			<div class="overview">
 						<div class="movie-info">
