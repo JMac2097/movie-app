@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700');
+@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,700");
 
 :root {
   --primary-color: #0e0f22;
@@ -10,54 +10,78 @@
 }
 
 .hidden {
-	display: none!important;
+  display: none !important;
 }
 
 body {
   background-color: var(--primary-color);
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
 }
 
 header {
   padding: 1rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   background-color: var(--secondary-color);
-	position: fixed;
-	width: 100vw;
-	z-index: 2;
-	opacity: 0.7;
-	transition: opacity 0.3s ease-in;
+  position: fixed;
+  width: 100vw;
+  z-index: 2;
+  opacity: 0.7;
+  transition: opacity 0.3s ease-in;
 }
 
 header:hover {
-	opacity: 1;
+  opacity: 1;
 }
 
+.search-form {
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 1.3rem;
+  display: flex;
+}
 
-
-.search {
+.search-input {
   background-color: transparent;
   border: 2px solid var(--primary-color);
-  border-radius: 50px;
+  border-radius: 10px 0 0 10px;
   font-family: inherit;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
   color: white;
+  font-family: inherit;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+  width: 100%;
 }
 
-.search::placeholder {
+.search-input::placeholder {
   color: #7378c5;
 }
 
-.search:focus {
+.search-input:focus {
   outline: none;
   background-color: var(--primary-color);
+  border-color: orange;
 }
 
+.search-form button {
+  background-color: orange;
+  font-size: inherit;
+  border: 2px solid orange;
+  border-radius: 0 10px 10px 0;
+  outline: none;
+  text-align: center;
+  font-weight: bold;
+  padding-right: 15px;
+}
+
+.search-form button:hover {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: orange;
+}
 main {
-  padding: 2rem;
+  padding: 7rem 2rem;
   display: grid;
   gap: 2rem;
   grid-auto-rows: minmax(100px, auto);
@@ -76,11 +100,11 @@ main {
 
 .movie img {
   width: 100%;
-	height: auto;
-	transition: opacity 0.2s ease-in;
-	aspect-ratio: 2/3;
-	object-fit: contain;
-	background-color: var(--primary-color);
+  height: auto;
+  transition: opacity 0.2s ease-in;
+  aspect-ratio: 2/3;
+  object-fit: contain;
+  background-color: var(--primary-color);
 }
 
 .movie-info {
@@ -93,22 +117,22 @@ main {
 }
 
 .movie-info h3 {
-	font-size: 2rem;
-	text-align: center;
+  font-size: 2rem;
+  text-align: center;
   margin-top: 0;
 }
 
 .rating-container {
-	display: flex;
-	justify-content: flex-end;
-	position: absolute;
-	right: 1rem;
-	bottom: 1.3rem;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 1rem;
+  bottom: 1.3rem;
 }
 
 .rating {
-	display: inline-block;
-	font-size: 1.4rem;
+  display: inline-block;
+  font-size: 1.4rem;
   font-weight: bold;
   background-color: var(--primary-color);
   padding: 0.25rem 0.5rem;
@@ -138,7 +162,7 @@ main {
   height: 100%;
   visibility: hidden;
   opacity: 0;
-	transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+  transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
   overflow-y: auto;
 }
 

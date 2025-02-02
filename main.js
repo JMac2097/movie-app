@@ -4,9 +4,12 @@ const IMG_PATH = "https://image.tmdb.org/t/p/w1280";
 const SEARCH_API =
   'https://api.themoviedb.org/3/search/movie?api_key=120737b6c47965cfd26124583f33c7d3&query="';
 
+  const PLACEHOLDER_IMG = 'https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?q=80&w=1728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+
 const main = document.getElementById("main");
 const form = document.getElementById("form");
-const search = document.getElementById("search");
+const search = document.querySelector(".search-input");
+const searchButton = document.querySelector(".js-search-button");  
 const resetButton = document.querySelector(".js-reset-search-button");
 
 getMovies(API_URL);
@@ -27,17 +30,15 @@ function showMovies(movies) {
     const movieEl = document.createElement("div");
     movieEl.classList.add("movie");
 
-		// set cases to swap out unavailable data
-		if (overview === '') overview += 'No overview available';
+    // set cases to swap out unavailable data
+    if (overview === "") overview += "No overview available";
     vote_average = vote_average.toFixed(1);
-     
-
 
     movieEl.innerHTML = `
 		<img
 				src="${IMG_PATH + poster_path}"
 				alt="${title} Poster Art"
-				onerror="this.src='https://images.unsplash.com/photo-1518676590629-3dcbd9c5a5c9?q=80&w=1728&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'" 
+				onerror="this.src='${PLACEHOLDER_IMG}'" 
 				width="1280"
 				height="1920">
 
@@ -75,11 +76,17 @@ form.addEventListener("submit", (e) => {
     getMovies(`${SEARCH_API}${searchTerm}"`);
 
     search.value = "";
+    toggleSearchButton(true);
     toggleResetButton(false);
   } else {
     window.location.reload();
   }
 });
+
+function toggleSearchButton(shouldHide) {
+  searchButton.classList.toggle("hidden", shouldHide);
+} 
+
 
 function toggleResetButton(shouldHide) {
   resetButton.classList.toggle("hidden", shouldHide);

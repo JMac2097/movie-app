@@ -1,34 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie App</title>
+  </head>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
-	<title>Movie App</title>
-</head>
+  <body>
+    <header>
+      <form id="form" class="search-form">
+        <input type="text" class="search-input" placeholder="Search for a movie" />
+        <button type="submit" class="js-search-button">Search</button>
+        <button class="js-reset-search-button hidden">Reset Search</button>
+      </form>
+    </header>
 
-<body>
+    <main id="main"></main>
 
-	<header>
-		<form id="form">
-			<input type="text" id="search" placeholder="Search for a movie">
-			<!-- <button type="submit">Search</button> --  TODO Add this in later -->
-		</form>
-		<button class="js-reset-search-button hidden">Reset Search</button>
-	</header>
-
-	<main id="main">
-
-
-	</main>
-
-	<script src="main.js"></script>
-
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>
-
 
 <!--
 
