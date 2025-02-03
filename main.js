@@ -71,6 +71,10 @@ function getClassByRating(vote) {
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const searchTerm = search.value;
+  if (search.value === "") {
+    alert("Please enter a search term");
+    return;
+  }
 
   if (searchTerm && searchTerm !== "") {
     getMovies(`${SEARCH_API}${searchTerm}"`);
