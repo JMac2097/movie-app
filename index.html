@@ -10,15 +10,21 @@
   <body>
     <header>
       <form id="form" class="search-form">
-        <input type="text" class="search-input" placeholder="Search for a movie" />
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search for a movie"
+        />
         <button type="submit" class="js-search-button">Search</button>
-        <button class="js-reset-search-button hidden">Reset Search</button>
       </form>
+      <button class="js-reset-search-button reset-search-button hidden">Reset Search</button>
     </header>
 
     <main id="main"></main>
     <footer>
-      <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+      <p>
+        This product uses the TMDB API but is not endorsed or certified by TMDB.
+      </p>
     </footer>
 
     <script src="main.js"></script>
@@ -34,6 +40,9 @@ A placeholder image to reduce down the CLS when new results are loaded.
 A better layout for the main page, maybe a film chart if you can get one
 or popular by genre.
 A feeling lucky punk addition that will return a random film based on pre-entered criteria.
+
+We need a page for no results returned
+The styling of the reset search button needs improving.
 
 
 

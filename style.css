@@ -64,7 +64,7 @@ header:hover {
   border-color: orange;
 }
 
-.search-form button {
+header button {
   background-color: orange;
   font-size: inherit;
   border: 2px solid orange;
@@ -75,11 +75,17 @@ header:hover {
   padding-right: 15px;
 }
 
-.search-form button:hover {
+header button:hover {
   cursor: pointer;
   background-color: var(--primary-color);
   color: orange;
 }
+
+.reset-search-button {
+  border-radius: 10px;
+  float: right;
+}
+
 main {
   padding: 7rem 2rem;
   display: grid;

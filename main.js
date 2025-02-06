@@ -47,7 +47,9 @@ function showMovies(movies) {
       height="1920"
       />
       <div class="rating-container">
-        <div class="rating ${getClassByRating(vote_average)}">${vote_average}%</div>
+        <div class="rating ${getClassByRating(
+          vote_average
+        )}">${vote_average}%</div>
       </div>
       <div class="overview">
         <div class="movie-info">
@@ -82,18 +84,12 @@ form.addEventListener("submit", (e) => {
 
   if (searchTerm && searchTerm !== "") {
     getMovies(`${SEARCH_API}${searchTerm}"`);
-
     search.value = "";
-    toggleSearchButton(true);
     toggleResetButton(false);
   } else {
     window.location.reload();
   }
 });
-
-function toggleSearchButton(shouldHide) {
-  searchButton.classList.toggle("hidden", shouldHide);
-}
 
 function toggleResetButton(shouldHide) {
   resetButton.classList.toggle("hidden", shouldHide);
